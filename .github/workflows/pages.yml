@@ -35,7 +35,7 @@ jobs:
       - name: Authenticate with NPM registry
         run: |
           echo "@psu-ooe:registry=https://npm.pkg.github.com" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> vendor/psu-ooe/static-site-generator/.npmrc
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
