@@ -32,10 +32,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Authenticate with NPM registry
-        run: |
-          echo "@psu-ooe:registry=https://npm.pkg.github.com" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> vendor/psu-ooe/static-site-generator/.npmrc
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
@@ -45,6 +41,10 @@ jobs:
           php-version: '8.1'
       - name: Composer install
         uses: "ramsey/composer-install@v2"
+      - name: Authenticate with NPM registry
+        run: |
+          echo "@psu-ooe:registry=https://npm.pkg.github.com" >> vendor/psu-ooe/static-site-generator/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> vendor/psu-ooe/static-site-generator/.npmrc
       - name: Compile assets
         run: vendor/bin/compile
       - name: Setup Pages
