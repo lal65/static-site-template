@@ -1,5 +1,5 @@
 {
-    "name": "lal65/static-site-template",
+    "name": "psu-online-education/static-site-template",
     "description": "Easily spin up on-brand, perfectly accessible static sites.",
     "type": "project",
     "minimum-stability": "dev",
@@ -10,6 +10,6 @@
         }
     ],
     "require-dev": {
-      "psu-ooe/static-site-generator": "dev-main"
+      "psu-online-education/static-site-generator": "dev-main"
     }
 }
